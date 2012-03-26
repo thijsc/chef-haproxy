@@ -17,7 +17,12 @@
 # limitations under the License.
 #
 
-pool_members = search("node", "role:#{node['haproxy']['app_server_role']} AND chef_environment:#{node.chef_environment}") || []
+pool_members = []
+if Chef::Config[:solo]
+  Chef::Log.warn("This recipe uses search. Chef Solo does not support search.")
+else
+  pool_members = search("node", "role:#{node['haproxy']['app_server_role']} AND chef_environment:#{node.chef_environment}")
+end
 
 # load balancer may be in the pool
 pool_members << node if node.run_list.roles.include?(node['haproxy']['app_server_role'])
