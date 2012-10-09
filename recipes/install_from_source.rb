@@ -20,7 +20,7 @@
 include_recipe "build-essential"
 
 remote_file "#{node['haproxy']['source']['install_prefix_root']}/share/haproxy-#{node['haproxy']['source']['version']}.tar.gz" do
-  source "http://haproxy.1wt.eu/download/#{node['haproxy']['source']['version_branch']}/src/devel/haproxy-#{node['haproxy']['source']['version']}.tar.gz"
+  source "http://haproxy.1wt.eu/download/#{node['haproxy']['source']['version_branch']}/src#{'/devel' if node['haproxy']['source']['version'].include?('dev')}/haproxy-#{node['haproxy']['source']['version']}.tar.gz"
   owner node['haproxy']['source']['user']
 end
 
