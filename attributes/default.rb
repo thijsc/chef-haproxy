@@ -27,3 +27,12 @@ default['haproxy']['x_forwarded_for'] = false
 default['haproxy']['enable_ssl'] = false
 default['haproxy']['ssl_incoming_port'] = "443"
 default['haproxy']['ssl_member_port'] = "8443"
+
+default['haproxy']['source']['enabled'] = false
+default['haproxy']['source']['version_branch'] = '1.5'
+default['haproxy']['source']['version'] = '1.5-dev11'
+default['haproxy']['source']['user'] = 'root'
+default['haproxy']['source']['install_prefix_root'] = '/usr/local'
+
+default['haproxy']['monit']['stats_url'] = 'http://127.0.0.1:22002'
+
