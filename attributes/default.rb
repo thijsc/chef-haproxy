@@ -33,6 +33,6 @@ default['haproxy']['source']['version_branch'] = '1.5'
 default['haproxy']['source']['version'] = '1.5-dev11'
 default['haproxy']['source']['user'] = 'root'
 default['haproxy']['source']['install_prefix_root'] = '/usr/local'
+default['haproxy']['source']['make_arguments'] = 'TARGET=generic'
 
 default['haproxy']['monit']['stats_url'] = 'http://127.0.0.1:22002'
-

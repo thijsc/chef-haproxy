@@ -29,7 +29,7 @@ execute "tar xvzf #{node['haproxy']['source']['install_prefix_root']}/share/hapr
   cwd "#{node['haproxy']['source']['install_prefix_root']}/share"
 end
 
-execute "make TARGET=generic && make install" do
+execute "make #{node['haproxy']['source']['make_arguments']} && make install" do
   user node['haproxy']['source']['user']
   cwd "#{node['haproxy']['source']['install_prefix_root']}/share/haproxy-#{node['haproxy']['source']['version']}"
 end

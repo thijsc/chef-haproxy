@@ -31,6 +31,7 @@ Attributes
 * `node['haproxy']['source']['version_branch']` - version branch of haproxy to install from source (1.3, 1.4, 1.5, etc.)
 * `node['haproxy']['source']['user']` - user to install haproxy as
 * `node['haproxy']['source']['install_prefix_root']` - prefix root under which to install haproxy from source
+* node['haproxy']['source']['make_arguments'] - arguments that are passed to make. default: TARGET=generic
 
 Usage
 =====
